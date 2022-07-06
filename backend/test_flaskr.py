@@ -128,17 +128,17 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data["success"], False)
         self.assertEqual(data["message"], "resource not found")
 
-    # def test_add_question(self):
-    #     """Tests that the add_questions endpoint creates a new
-    #     question
-    #     """
-    #     res = self.client().post("/questions/", json=self.new_question)
-    #     data = json.loads(res.data)
+    def test_add_question(self):
+        """Tests that the add_questions endpoint creates a new
+        question
+        """
+        res = self.client().post("/questions", json=self.new_question)
+        data = json.loads(res.data)
 
-    #     #self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data["success"], True)
-    #     self.assertTrue(data["created"])
-    #     self.assertTrue(data["questions"])
+        #self.assertEqual(res.status_code, 200)
+        self.assertEqual(data["success"], True)
+        self.assertTrue(data["created"])
+        self.assertTrue(data["questions"])
 
     def test_405_if_add_question_not_allowed(self):
         """Tests the add_questions endpoint for error
@@ -173,19 +173,19 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data["success"], False)
         self.assertEqual(data["message"], "method not allowed")
 
-    # def test_delete_questions(self):
-    #     """Tests the delete_questions endpoint"""
-    #     res = self.client().delete("/questions/19")
-    #     data = json.loads(res.data)
+    def test_delete_questions(self):
+        """Tests the delete_questions endpoint"""
+        res = self.client().delete("/questions/19")
+        data = json.loads(res.data)
 
-    #     question = Question.query.filter(Question.id == 19).one_or_none()
+        question = Question.query.filter(Question.id == 19).one_or_none()
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data["success"], True)
-    #     self.assertTrue(data["deleted"], 19)
-    #     self.assertTrue(data["questions"])
-    #     self.assertTrue(data["total_questions"])
-    #     self.assertEqual(question, None)
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data["success"], True)
+        self.assertTrue(data["deleted"], 19)
+        self.assertTrue(data["questions"])
+        self.assertTrue(data["total_questions"])
+        self.assertEqual(question, None)
 
     def test_422_if_question_does_not_exist(self):
         """Tests the delete_questions endpoint for 422 error
@@ -212,7 +212,9 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data["success"], True)
 
     def test_422_quizzes(self):
-        """Tests play-quizzes endpoint without quiz data"""
+        """Tests play-quizzes endpoint sends 422 error
+            without quiz data being sent
+        """
         response = self.client().post("/quizzes", json={})
         data = json.loads(response.data)
 
