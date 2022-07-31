@@ -55,10 +55,14 @@
         'error':404,
         'message':'resource not found'
     }
-    The API will return these error types:
-    404: resource not found
+    
+    The API will return response for these error types when requests fail:
+    
+    404: Resource not found
+    405: Method not allowed
     422: Unprocessable Entity
     500: Internal Server Error
+   
     
   # Endpoints:
    # GET /categories
@@ -247,19 +251,3 @@
   "success": true
 }
 #####################################################################################################
-
-# Error handling
-
-The API will return three error types when requests fail:
-
-405: Method not allowed
-404: Resource Not Found
-422: Not Processable
-
-
-
- # Author
-  Joseph Emefieh
-
- # Acknowledgements
-  My session lead Gift Chimponda and Udacity instructors
