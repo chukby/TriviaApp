@@ -11,7 +11,7 @@
 
     Install dependencies by navigating to the `/backend` directory and running:
 
-      In bash shell or on a mac
+      In bash shell or on a mac terminal
       ```
         pip install -r requirements.txt
       ```
