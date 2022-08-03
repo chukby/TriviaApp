@@ -59,7 +59,7 @@ You can optionally update this game play to increase the number of questions or 
 
 ---
 
-## DO NOT PROCEED: ENDPOINT SPOILERS1
+## DO NOT PROCEED: ENDPOINT SPOILERS
 
 > Only read the below to confirm your notes regarding the expected API endpoint behavior based on reading the frontend codebase.
 
