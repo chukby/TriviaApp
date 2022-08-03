@@ -6,7 +6,7 @@ from settings import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT
 
 
 database_path = "postgresql://{}:{}@{}:{}/{}".format(
-    DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME
+    DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_
 )
 db = SQLAlchemy()
 
