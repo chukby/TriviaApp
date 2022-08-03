@@ -11,19 +11,19 @@
 
     Install dependencies by navigating to the `/backend` directory and running:
 
-      In bash shell or on a mac terminal
+      In bash shell or on mac terminal
       ```
         pip install -r requirements.txt
       ```
     With Postgres running, restore a database using the trivia.psql file provided. From the backend folder in terminal run:
     
-      In bash shell or on a mac terminal
+      In bash shell or on mac terminal
       ```
         psql trivia < trivia.psql
         
       ```
     To run the server, execute:
-        In bash shell or on a mac terminal
+        In bash shell or on mac terminal
 
         ```
         export FLASK_APP=flaskr
@@ -33,7 +33,7 @@
         This will run locally on http://127.0.0.1:5000 and is a proxy in the frontend cofiguration
      
     Frontend:
-        In bash shell or on a mac terminal
+        In bash shell or on mac terminal
         ```bash
         npm start
         ```
